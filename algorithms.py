@@ -1,5 +1,7 @@
 from math import floor
 
+# Simple Enumeration Maximum Subarray Algorithm
+# Takes array as parameter
 def enumMaxSub(ls):
 
         if len(ls) == 1:
@@ -22,7 +24,8 @@ def enumMaxSub(ls):
                                 
                 return start, end, maxSum
 	
-
+# Improved Enumeration Maximum Subarray Algorithm
+# Takes array as parameter
 def betterEnumMaxSub(ls):
 
         if len(ls) == 1:
@@ -44,7 +47,9 @@ def betterEnumMaxSub(ls):
                                         end = j
                                 
                 return start, end, maxSum
-			
+
+# Calculates maximum crossing subarray
+# takes array, low index, mid index, and high index as parameters
 def maxCrossSub(ls, low, mid, high):
 	
 	sumLeft = float("-inf")	
@@ -66,7 +71,8 @@ def maxCrossSub(ls, low, mid, high):
 			maxRight = j
 	
 	return maxLeft, maxRight, sumLeft + sumRight
-	
+
+# Calculates maximum subarray using recursive method	
 def maxSubRec(ls, low, high):	
 	if (low == high):
 		return low, high, ls[low]
@@ -83,7 +89,8 @@ def maxSubRec(ls, low, high):
 			return rightLow, rightHigh, rightSum
 		else:
 			return crossLow, crossHigh, crossSum
-		
+
+# Linear maximum subarray algorithm		
 def iterMaxSub(ls):
         curSum = maxSum = ls[0]
         i = j = 0          
