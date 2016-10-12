@@ -4,6 +4,7 @@ from math import floor
 # Takes array as parameter
 def enumMaxSub(ls):
 
+        # Check if only one element in array
         if len(ls) == 1:
                 return 0,0,ls[0]
         else:
@@ -28,6 +29,7 @@ def enumMaxSub(ls):
 # Takes array as parameter
 def betterEnumMaxSub(ls):
 
+        # Check if only one element in array
         if len(ls) == 1:
                 return 0,0,ls[0]
         else:
@@ -78,11 +80,13 @@ def maxSubRec(ls, low, high):
 		return low, high, ls[low]
 	else:
 		mid = int(floor((low+high)/2))
-		
+
+		# Calculate left, right, and crossing max subarrays
 		leftLow, leftHigh, leftSum = maxSubRec(ls, low, mid)
 		rightLow, rightHigh, rightSum = maxSubRec(ls, mid+1, high)
 		crossLow, crossHigh, crossSum = maxCrossSub(ls, low, mid, high)
-		
+
+		# Determine overall max and return
 		if (leftSum >= rightSum and leftSum >= crossSum):
 			return leftLow, leftHigh, leftSum
 		elif (rightSum >= leftSum and rightSum >= crossSum):
@@ -92,6 +96,7 @@ def maxSubRec(ls, low, high):
 
 # Linear maximum subarray algorithm		
 def iterMaxSub(ls):
+        
         curSum = maxSum = ls[0]
         i = j = 0          
         start = end = 0  
