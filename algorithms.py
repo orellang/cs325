@@ -112,12 +112,29 @@ def iterMaxSub(ls):
                         end = j
         return start, end, maxSum  		
 	
-		
-		
-	
+def loadInput(fileName):
+
+        # Loads arrays from MSS_Problems.txt
+        mssProblems = []
+        with open(fileName) as file:
+                for line in file:
+                        if line.strip():
+                                data = line.replace('[', '').replace(']','').replace(' ', '')
+                                mssProblems.append([int(num) for num in data.split(',') if num not in '\n'])
+                
+                return mssProblems
+
 def main():
-	list1 = [2]
-	max = betterEnumMaxSub(list1)
-	print (max)
+        # Get arrays from file
+        problems = loadInput('MSS_TestProblems-1.txt')
+        # Create output file for results
+        output = open('MSS_Results.txt', 'w+')
+
+        # Finding largest subarray and write to results file
+        for i in range (0, len(problems)):
+                max = betterEnumMaxSub(problems[i])
+                output.write(str(problems[i])+"\n")
+                output.write(str(problems[i][max[0]:max[1]+1])+"\n")
+                output.write(str(max[2])+"\n\n")
 
 if __name__ == "__main__": main()
