@@ -1,0 +1,12 @@
+Algorithm = Iterative 
+
+Input size = 1000, average running time = 0.0002056156 seconds
+Input size = 2000, average running time = 0.0006197976 seconds
+Input size = 5000, average running time = 0.0016375264 seconds
+Input size = 10000, average running time = 0.0037856705 seconds
+Input size = 20000, average running time = 0.0080701984 seconds
+Input size = 50000, average running time = 0.0183822397 seconds
+Input size = 100000, average running time = 0.0396036255 seconds
+Input size = 200000, average running time = 0.0817804823 seconds
+Input size = 500000, average running time = 0.1932772081 seconds
+Input size = 1000000, average running time = 0.406926312 seconds

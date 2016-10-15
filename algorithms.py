@@ -135,36 +135,71 @@ def generateArray(numElements):
 
 def runTestProblems():
         # Get arrays from file
-        problems = loadInput('MSS_TestProblems-1.txt')
+        problems = loadInput('MSS_Problems.txt')
         # Create output file for results
         output = open('MSS_Results.txt', 'w+')
 
         # Finding largest subarray and write to results file
         for i in range (0, len(problems)):
-                max = betterEnumMaxSub(problems[i])
+                max = iterMaxSub(problems[i])
                 output.write(str(problems[i])+"\n")
                 output.write(str(problems[i][max[0]:max[1]+1])+"\n")
                 output.write(str(max[2])+"\n\n")
 
-def runTests():
+# Run average runtime tests. Outputs results to console and file with algorithm name
+def runTests(testValues, algorithm):
         
-        testValues = [100, 200, 500, 1000, 10000, 50000, 100000, 500000, 1000000]
         testArrays = []
         averageTime = 0
-                
+        output = open(algorithm+'.txt', 'w+')
+        print("Algorithm = %s \n" % algorithm)
+        output.write("Algorithm = %s \n\n" % algorithm)
+
+        # Run each array ten times and get average runtime
         for i in range (0, len(testValues)):
                 totalTime = 0
                 for k in range (0,11):
                         testArrays.append(generateArray(testValues[i]))
                 for j in range (0, len(testArrays)):
-                        startTime = time.clock()
-                        (maxSubRec(testArrays[j], 0, len(testArrays[j])-1))
-                        totalTime += (time.clock() - startTime)
-                averageTime = round(totalTime/10, 6)
-                print("Average running time = %s seconds" % (averageTime))
+                        if algorithm == 'Recursive':
+                                
+                                startTime = time.clock()
+                                (maxSubRec(testArrays[j], 0, len(testArrays[j])-1))
+                                totalTime += (time.clock() - startTime)
+                        elif algorithm == 'Enumeration':
+                                startTime = time.clock()
+                                (enumMaxSub(testArrays[j]))
+                                totalTime += (time.clock() - startTime)
+                        elif algorithm == 'BetterEnumeration':
+                                startTime = time.clock()
+                                (betterEnumMaxSub(testArrays[j]))
+                                totalTime += (time.clock() - startTime)
+                        else:
+                                startTime = time.clock()
+                                (iterMaxSub(testArrays[j]))
+                                totalTime += (time.clock() - startTime)
+                                
+                averageTime = round(totalTime/10, 10)
+                print ("Input size = %s, average running time = %s seconds" % (testValues[i], averageTime))
+                output.write("Input size = %s, average running time = %s seconds\n" % (testValues[i], averageTime))
+        print("\n")
 
 def main():
+
+        # Run algorithm on test problems
         runTestProblems()
-        runTests()
+
+        # Values to test each algorithm
+        testValuesEnumeration = [10, 20, 30, 40, 50, 100, 200, 300, 400, 500]
+        testValuesBetterEnumeration = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]
+        testValuesRecursive = [100, 200, 500, 1000, 2000, 10000, 20000, 50000, 100000, 500000]
+        testValuesIterative = [1000, 2000, 5000, 10000, 20000, 50000, 100000, 200000, 500000, 1000000]
+
+        # Run tests
+        runTests(testValuesEnumeration, 'Enumeration')
+        runTests(testValuesBetterEnumeration, 'BetterEnumeration')
+        runTests(testValuesRecursive, 'Recursive')
+        runTests(testValuesIterative, 'Iterative')
+        
 
 if __name__ == "__main__": main()
