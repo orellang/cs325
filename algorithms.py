@@ -133,13 +133,41 @@ def generateArray(numElements):
                 randomArray.append(random.randrange(-100, 101))
         return randomArray
 
+# Gets sets of test arrays from file, outputs results of each algorithm run on each array to output file
 def runTestProblems():
         # Get arrays from file
         problems = loadInput('MSS_Problems.txt')
         # Create output file for results
         output = open('MSS_Results.txt', 'w+')
 
-        # Finding largest subarray and write to results file
+        # Finding largest subarray for each algorithm and write to results file
+
+        # Enumeration Results
+        output.write("Enumeration Algorithm Results: \n\n")
+        for i in range (0, len(problems)):
+                max = enumMaxSub(problems[i])
+                output.write(str(problems[i])+"\n")
+                output.write(str(problems[i][max[0]:max[1]+1])+"\n")
+                output.write(str(max[2])+"\n\n")
+
+        # Better Enumeration Results
+        output.write("Better Enumeration Algorithm Results: \n\n")
+        for i in range (0, len(problems)):
+                max = betterEnumMaxSub(problems[i])
+                output.write(str(problems[i])+"\n")
+                output.write(str(problems[i][max[0]:max[1]+1])+"\n")
+                output.write(str(max[2])+"\n\n")
+
+        # Divide and Conquer Results
+        output.write("Divide and Conquer Algorithm Results: \n\n")
+        for i in range (0, len(problems)):
+                max = maxSubRec(problems[i], 0, len(problems[i])-1)
+                output.write(str(problems[i])+"\n")
+                output.write(str(problems[i][max[0]:max[1]+1])+"\n")
+                output.write(str(max[2])+"\n\n")
+
+        # Iterative Results
+        output.write("Iterative Algorithm Results: \n\n")
         for i in range (0, len(problems)):
                 max = iterMaxSub(problems[i])
                 output.write(str(problems[i])+"\n")
@@ -194,7 +222,7 @@ def main():
         # Run algorithm on test problems
         runTestProblems()
 
-        # Values to test each algorithm
+        '''# Values to test each algorithm
         testValuesEnumeration = [50, 100, 150, 200, 250, 300, 350, 400, 450, 500]
         testValuesBetterEnumeration = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]
         testValuesRecursive = [10000, 20000, 30000, 40000, 50000, 60000, 70000, 80000, 90000, 100000]
@@ -204,7 +232,7 @@ def main():
         runTests(testValuesEnumeration, 'Enumeration')
         runTests(testValuesBetterEnumeration, 'BetterEnumeration')
         runTests(testValuesRecursive, 'Recursive')
-        runTests(testValuesIterative, 'Iterative')
+        runTests(testValuesIterative, 'Iterative')'''
         
 
 if __name__ == "__main__": main()
