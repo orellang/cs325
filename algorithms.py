@@ -129,7 +129,7 @@ def loadInput(fileName):
 def generateArray(numElements):
 
         randomArray = []
-        for i in range(0, numElements+1):
+        for i in range(0, numElements):
                 randomArray.append(random.randrange(-100, 101))
         return randomArray
 
@@ -155,33 +155,36 @@ def runTests(testValues, algorithm):
         print("Algorithm = %s \n" % algorithm)
         output.write("Algorithm = %s \n\n" % algorithm)
 
-        # Run each array ten times and get average runtime
+        # Generate randomly filled arrays
         for i in range (0, len(testValues)):
+                testArrays.append(generateArray(testValues[i]))
+        # Run each array ten times and get average runtime
+        for j in range (0, len(testArrays)):
                 totalTime = 0
-                for k in range (0,11):
-                        testArrays.append(generateArray(testValues[i]))
-                for j in range (0, len(testArrays)):
-                        if algorithm == 'Recursive':
-                                
+                for k in range (0,10):
+                        currentTime = 0
+                        if algorithm == 'Recursive':                        
                                 startTime = time.clock()
                                 (maxSubRec(testArrays[j], 0, len(testArrays[j])-1))
-                                totalTime += (time.clock() - startTime)
+                                currentTime = (time.clock() - startTime)
                         elif algorithm == 'Enumeration':
                                 startTime = time.clock()
                                 (enumMaxSub(testArrays[j]))
-                                totalTime += (time.clock() - startTime)
+                                currentTime = (time.clock() - startTime)
                         elif algorithm == 'BetterEnumeration':
                                 startTime = time.clock()
                                 (betterEnumMaxSub(testArrays[j]))
-                                totalTime += (time.clock() - startTime)
+                                currentTime = (time.clock() - startTime)
                         else:
                                 startTime = time.clock()
                                 (iterMaxSub(testArrays[j]))
-                                totalTime += (time.clock() - startTime)
-                                
+                                currentTime = (time.clock() - startTime)
+                        totalTime += currentTime        
+                        print ("Input size = %s, running time = %s seconds" % (testValues[j], currentTime))
+                        output.write("Input size = %s, running time = %s seconds\n" % (testValues[j], currentTime))
                 averageTime = round(totalTime/10, 10)
-                print ("Input size = %s, average running time = %s seconds" % (testValues[i], averageTime))
-                output.write("Input size = %s, average running time = %s seconds\n" % (testValues[i], averageTime))
+                print("Average time = %s \n" % averageTime)
+                output.write("Average time = %s \n" % averageTime)
         print("\n")
 
 def main():

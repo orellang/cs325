@@ -1,12 +1,112 @@
 Algorithm = Recursive 
 
-Input size = 100, average running time = 0.0004090929 seconds
-Input size = 200, average running time = 0.0012461811 seconds
-Input size = 500, average running time = 0.0034533841 seconds
-Input size = 1000, average running time = 0.008153548 seconds
-Input size = 2000, average running time = 0.0177716367 seconds
-Input size = 10000, average running time = 0.069558585 seconds
-Input size = 20000, average running time = 0.1754203402 seconds
-Input size = 50000, average running time = 0.4565101627 seconds
-Input size = 100000, average running time = 1.0345490655 seconds
-Input size = 500000, average running time = 4.2333797765 seconds
+Input size = 100, running time = 0.00038446011365067534 seconds
+Input size = 100, running time = 0.0011084767681737162 seconds
+Input size = 100, running time = 0.0011260105442119084 seconds
+Input size = 100, running time = 0.00110035135976716 seconds
+Input size = 100, running time = 0.0011106150335464804 seconds
+Input size = 100, running time = 0.0011123256458418496 seconds
+Input size = 100, running time = 0.0010669944199861447 seconds
+Input size = 100, running time = 0.0006115438960208053 seconds
+Input size = 100, running time = 0.0005970036915030619 seconds
+Input size = 100, running time = 0.0005833187931258976 seconds
+Average time = 0.00088011 
+Input size = 200, running time = 0.001179467178481275 seconds
+Input size = 200, running time = 0.0011730523823700878 seconds
+Input size = 200, running time = 0.0007719137988217994 seconds
+Input size = 200, running time = 0.0010734092160973319 seconds
+Input size = 200, running time = 0.0007873093094943329 seconds
+Input size = 200, running time = 0.0007710584926741149 seconds
+Input size = 200, running time = 0.0007740520641945636 seconds
+Input size = 200, running time = 0.0008283640046116147 seconds
+Input size = 200, running time = 0.0007749073703493536 seconds
+Input size = 200, running time = 0.0008813929858035863 seconds
+Average time = 0.0009014927 
+Input size = 500, running time = 0.0020407604698036153 seconds
+Input size = 500, running time = 0.0021853072088617864 seconds
+Input size = 500, running time = 0.002049741184357856 seconds
+Input size = 500, running time = 0.0020535900620259895 seconds
+Input size = 500, running time = 0.002145963126046979 seconds
+Input size = 500, running time = 0.0020510241435829357 seconds
+Input size = 500, running time = 0.0020441816943943536 seconds
+Input size = 500, running time = 0.0020715514911415767 seconds
+Input size = 500, running time = 0.0021900113926776044 seconds
+Input size = 500, running time = 0.002046747612844513 seconds
+Average time = 0.0020878878 
+Input size = 1000, running time = 0.00428679441519364 seconds
+Input size = 1000, running time = 0.004443743093403896 seconds
+Input size = 1000, running time = 0.0042718265575985015 seconds
+Input size = 1000, running time = 0.004293209211304827 seconds
+Input size = 1000, running time = 0.004294919823600196 seconds
+Input size = 1000, running time = 0.004321861967270024 seconds
+Input size = 1000, running time = 0.004262418189966866 seconds
+Input size = 1000, running time = 0.004361633703169332 seconds
+Input size = 1000, running time = 0.00438729288761408 seconds
+Input size = 1000, running time = 0.004740961979926794 seconds
+Average time = 0.0043664662 
+Input size = 2000, running time = 0.008998675986077842 seconds
+Input size = 2000, running time = 0.008899460472882481 seconds
+Input size = 2000, running time = 0.008919132514293437 seconds
+Input size = 2000, running time = 0.008953772413299532 seconds
+Input size = 2000, running time = 0.00909404262161928 seconds
+Input size = 2000, running time = 0.008939232208781789 seconds
+Input size = 2000, running time = 0.008801527918905094 seconds
+Input size = 2000, running time = 0.008887058533737502 seconds
+Input size = 2000, running time = 0.008887058533737502 seconds
+Input size = 2000, running time = 0.008804949143495833 seconds
+Average time = 0.008918491 
+Input size = 10000, running time = 0.04777013134081187 seconds
+Input size = 10000, running time = 0.047219314181319305 seconds
+Input size = 10000, running time = 0.04737326928800911 seconds
+Input size = 10000, running time = 0.04700848121576939 seconds
+Input size = 10000, running time = 0.04727576438710912 seconds
+Input size = 10000, running time = 0.046928510090907594 seconds
+Input size = 10000, running time = 0.04794675206042598 seconds
+Input size = 10000, running time = 0.04694176733620026 seconds
+Input size = 10000, running time = 0.04757725980437755 seconds
+Input size = 10000, running time = 0.047085886422181034 seconds
+Average time = 0.0473127136 
+Input size = 20000, running time = 0.09701652109355763 seconds
+Input size = 20000, running time = 0.0972983444694222 seconds
+Input size = 20000, running time = 0.09717133150640223 seconds
+Input size = 20000, running time = 0.0966803857772831 seconds
+Input size = 20000, running time = 0.09935065157222311 seconds
+Input size = 20000, running time = 0.09896020431553154 seconds
+Input size = 20000, running time = 0.09853468950676358 seconds
+Input size = 20000, running time = 0.09677575241282454 seconds
+Input size = 20000, running time = 0.09765800070476871 seconds
+Input size = 20000, running time = 0.09912998258597128 seconds
+Average time = 0.0978575864 
+Input size = 50000, running time = 0.2547080326932232 seconds
+Input size = 50000, running time = 0.2766085742730766 seconds
+Input size = 50000, running time = 0.29147935462018637 seconds
+Input size = 50000, running time = 0.2595088661035305 seconds
+Input size = 50000, running time = 0.2533865846941268 seconds
+Input size = 50000, running time = 0.2892410184301326 seconds
+Input size = 50000, running time = 0.2541332669615741 seconds
+Input size = 50000, running time = 0.25594993722052806 seconds
+Input size = 50000, running time = 0.28361096570906597 seconds
+Input size = 50000, running time = 0.25705370980488595 seconds
+Average time = 0.2675680311 
+Input size = 100000, running time = 0.5613117659334961 seconds
+Input size = 100000, running time = 0.5433956680454202 seconds
+Input size = 100000, running time = 0.529454605481483 seconds
+Input size = 100000, running time = 0.5318079803484892 seconds
+Input size = 100000, running time = 0.5331931486556272 seconds
+Input size = 100000, running time = 0.5302260916272346 seconds
+Input size = 100000, running time = 0.5309898800176569 seconds
+Input size = 100000, running time = 0.5304168248983032 seconds
+Input size = 100000, running time = 0.5355456682164785 seconds
+Input size = 100000, running time = 0.5329686307917072 seconds
+Average time = 0.5359310264 
+Input size = 500000, running time = 2.855230026035521 seconds
+Input size = 500000, running time = 2.8757984282894213 seconds
+Input size = 500000, running time = 2.9540272945298014 seconds
+Input size = 500000, running time = 2.9167616056491283 seconds
+Input size = 500000, running time = 2.9778082266766646 seconds
+Input size = 500000, running time = 2.9132946221770624 seconds
+Input size = 500000, running time = 2.8764352037168237 seconds
+Input size = 500000, running time = 2.890567854857977 seconds
+Input size = 500000, running time = 2.9321186275415414 seconds
+Input size = 500000, running time = 2.8448329244969983 seconds
+Average time = 2.9036874814 
