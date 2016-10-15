@@ -1,4 +1,6 @@
 from math import floor
+import random
+import time
 
 # Simple Enumeration Maximum Subarray Algorithm
 # Takes array as parameter
@@ -124,7 +126,14 @@ def loadInput(fileName):
                 
                 return mssProblems
 
-def main():
+def generateArray(numElements):
+
+        randomArray = []
+        for i in range(0, numElements+1):
+                randomArray.append(random.randrange(-100, 101))
+        return randomArray
+
+def runTestProblems():
         # Get arrays from file
         problems = loadInput('MSS_TestProblems-1.txt')
         # Create output file for results
@@ -136,5 +145,26 @@ def main():
                 output.write(str(problems[i])+"\n")
                 output.write(str(problems[i][max[0]:max[1]+1])+"\n")
                 output.write(str(max[2])+"\n\n")
+
+def runTests():
+        
+        testValues = [100, 200, 500, 1000, 10000, 50000, 100000, 500000, 1000000]
+        testArrays = []
+        averageTime = 0
+                
+        for i in range (0, len(testValues)):
+                totalTime = 0
+                for k in range (0,11):
+                        testArrays.append(generateArray(testValues[i]))
+                for j in range (0, len(testArrays)):
+                        startTime = time.clock()
+                        (maxSubRec(testArrays[j], 0, len(testArrays[j])-1))
+                        totalTime += (time.clock() - startTime)
+                averageTime = round(totalTime/10, 6)
+                print("Average running time = %s seconds" % (averageTime))
+
+def main():
+        runTestProblems()
+        runTests()
 
 if __name__ == "__main__": main()
