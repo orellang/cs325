@@ -149,42 +149,44 @@ def runTestProblems():
 # Run average runtime tests. Outputs results to console and file with algorithm name
 def runTests(testValues, algorithm):
         
-        testArrays = []
+        #testArrays = []
         averageTime = 0
         output = open(algorithm+'.txt', 'w+')
         print("Algorithm = %s \n" % algorithm)
         output.write("Algorithm = %s \n\n" % algorithm)
 
-        # Generate randomly filled arrays
-        for i in range (0, len(testValues)):
-                testArrays.append(generateArray(testValues[i]))
         # Run each array ten times and get average runtime
-        for j in range (0, len(testArrays)):
+        for j in range (0, len(testValues)):
                 totalTime = 0
+                # Run ten iterations for each test value length
                 for k in range (0,10):
                         currentTime = 0
+                        # Generate randomly filled array
+                        testArray = generateArray(testValues[j])
                         if algorithm == 'Recursive':                        
                                 startTime = time.clock()
-                                (maxSubRec(testArrays[j], 0, len(testArrays[j])-1))
+                                maxSubRec(testArray, 0, len(testArray)-1)
                                 currentTime = (time.clock() - startTime)
                         elif algorithm == 'Enumeration':
                                 startTime = time.clock()
-                                (enumMaxSub(testArrays[j]))
+                                enumMaxSub(testArray)
                                 currentTime = (time.clock() - startTime)
                         elif algorithm == 'BetterEnumeration':
                                 startTime = time.clock()
-                                (betterEnumMaxSub(testArrays[j]))
+                                betterEnumMaxSub(testArray)
                                 currentTime = (time.clock() - startTime)
                         else:
                                 startTime = time.clock()
-                                (iterMaxSub(testArrays[j]))
+                                iterMaxSub(testArray)
                                 currentTime = (time.clock() - startTime)
                         totalTime += currentTime        
                         print ("Input size = %s, running time = %s seconds" % (testValues[j], currentTime))
                         output.write("Input size = %s, running time = %s seconds\n" % (testValues[j], currentTime))
+                # Get average of ten runs
                 averageTime = round(totalTime/10, 10)
                 print("Average time = %s \n" % averageTime)
                 output.write("Average time = %s \n" % averageTime)
+                output.write("%s,%s\n" %(testValues[j],averageTime))
         print("\n")
 
 def main():
@@ -193,10 +195,10 @@ def main():
         runTestProblems()
 
         # Values to test each algorithm
-        testValuesEnumeration = [10, 20, 30, 40, 50, 100, 200, 300, 400, 500]
+        testValuesEnumeration = [50, 100, 150, 200, 250, 300, 350, 400, 450, 500]
         testValuesBetterEnumeration = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]
-        testValuesRecursive = [100, 200, 500, 1000, 2000, 10000, 20000, 50000, 100000, 500000]
-        testValuesIterative = [1000, 2000, 5000, 10000, 20000, 50000, 100000, 200000, 500000, 1000000]
+        testValuesRecursive = [10000, 20000, 30000, 40000, 50000, 60000, 70000, 80000, 90000, 100000]
+        testValuesIterative = [100000, 200000, 300000, 400000, 500000, 600000, 700000, 800000, 900000, 1000000]
 
         # Run tests
         runTests(testValuesEnumeration, 'Enumeration')
