@@ -8,7 +8,7 @@ Gabriel Anthony Orellana - orellang@oregonstate.edu
 George Tyler Sustare - sustareg@oregonstate.edu
 --------------------------------------------
 
-To execute which runs all four algorithms using the arrays in MSS_Problems.txt, 
+To execute and run all four algorithms using the arrays in MSS_Problems.txt, 
 use the following command:
 
 python algorithms.py
