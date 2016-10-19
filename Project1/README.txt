@@ -24,4 +24,8 @@ The formatting for MSS_Results.txt is as follows:
 
 This is repeated for each array tested, with the results for each algorithm 
 listed under their respective section. 
+
+Additionally, this program will output the average running times for each array
+tested in a .txt file with the name of the algorithm tested. To run this, 
+uncomment the last four lines of main()
 --------------------------------------------

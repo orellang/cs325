@@ -219,20 +219,20 @@ def runTests(testValues, algorithm):
 
 def main():
 
-        # Run algorithm on test problems
+        # Run algorithms on test problems
         runTestProblems()
 
-        '''# Values to test each algorithm
+        # Values to test each algorithm
         testValuesEnumeration = [50, 100, 150, 200, 250, 300, 350, 400, 450, 500]
         testValuesBetterEnumeration = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]
         testValuesRecursive = [10000, 20000, 30000, 40000, 50000, 60000, 70000, 80000, 90000, 100000]
         testValuesIterative = [100000, 200000, 300000, 400000, 500000, 600000, 700000, 800000, 900000, 1000000]
 
         # Run tests
-        runTests(testValuesEnumeration, 'Enumeration')
-        runTests(testValuesBetterEnumeration, 'BetterEnumeration')
-        runTests(testValuesRecursive, 'Recursive')
-        runTests(testValuesIterative, 'Iterative')'''
+        #runTests(testValuesEnumeration, 'Enumeration')
+        #runTests(testValuesBetterEnumeration, 'BetterEnumeration')
+        #runTests(testValuesRecursive, 'Recursive')
+        #runTests(testValuesIterative, 'Iterative')
         
 
 if __name__ == "__main__": main()
